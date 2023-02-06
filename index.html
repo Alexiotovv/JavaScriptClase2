@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptClase2</title>
+</head>
+
+<body>
+
+    <script>
+        //iterando objetos
+        const keys = ["nombre", "vida", "fuerza", "habla"];//lista llamada keys
+        const values = ["Manz", 99, 10, function() { return "Hola" }]; //lista llamada values
+
+        const entries = []; //lista declarada como vacia
+        for (let index = 0; index < keys.length; index++) {
+            const key = keys[index]; //almacena la clave en la constante key
+            const value = values[index];//almacena el valor en la constante value
+            entries.push([key, value]);//sitaxis para agregar un elemento a un array, lista u objeto
+        }  
+        
+        console.log(entries);//imprime en pantalla la lista
+
+        // 
+
+
+
+        //objetos clave, valor, entries
+        const animals = ["Gato", "Perro", "Burro", "Gallo", "Ratón"];
+
+        console.log(Object.keys(animals));     // [0, 1, 2, 3, 4]
+        console.log(Object.values(animals));   // ["Gato", "Perro", "Burro", "Gallo", "Ratón"]
+        console.log(Object.entries(animals));  // [[0, "Gato"], [1, "Perro"], [2, "Burro"], [3, "Gallo"], [4, "Ratón"]]
+
+        //Formatos Json similares a objetos para eviar o recibir
+        //información
+        const informacion = {
+            "name": "Manz",
+            "life": 3,
+            "totalLife": 6,
+            "power": 10,
+            "dead": false,
+            "props": ["Rápido", "Muy rápido", "Demasiado Rápido","Extrarapido"],//en esta propiedad tenemos un array o lista
+            "senses": {//en esta propiedad tenemos un objeto
+                "vision": 50,
+                "audition": 75,
+                "taste": 40,
+                "touch": 80
+            }
+        }
+        console.log("La informacion tiene "+ informacion.props.length +" velocidades:"+
+            informacion.props + " con sensibilidad de audition "+
+            informacion.senses["audition"]
+        )
+
+        console.log(informacion.senses["audition"]);
+        console.log(informacion.props[1]);
+
+
+        //Si una funcion esta dentro de un objeto se convierte
+        //en un método
+        const user = {
+            name: "Julio",
+            talk: function () {
+                return "Hola, estoy hablando";
+            }
+        };
+
+        console.log(user.name);// Es una variable (propiedad), devuelve "Manz"
+        console.log(user.talk());// Es una función (método), se ejecuta y devuelve "Hola"
+
+        const persona = {
+            nombre: "Alex",
+            edad: "38",
+            fechanac: "19/08/1984",
+        };
+
+        //Obteniendo datos del objeto
+        console.log(persona["nombre"]);
+        console.log(persona["edad"]);
+        console.log(persona["fechanac"]);
+
+        console.log(persona.nombre);
+        console.log(persona.edad);
+        console.log(persona.fechanac);
+
+    </script>
+
+</body>
+
+</html>
